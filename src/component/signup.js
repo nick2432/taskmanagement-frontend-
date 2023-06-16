@@ -12,7 +12,7 @@ export default function Signup() {
         e.preventDefault();
         try {
           const { data } = await axios.post(
-            "http://localhost:8100/api/user/register",
+            "https://taskmanagement-backend-nikhil.onrender.com/api/user/register",
             { name,email,password},
               {
                 headers: {
@@ -20,7 +20,8 @@ export default function Signup() {
                 },
               }
           );
-          navigate('/tasks')
+          const id=data.user._id;
+          navigate(`/tasks/${id}`)
         } 
         catch (error) {
             const x=error.response.data.message;

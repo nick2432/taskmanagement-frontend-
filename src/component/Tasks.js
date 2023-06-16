@@ -16,7 +16,6 @@ export default function Tasks() {
   const [arr, setarr] = useState([]);
   const [change, setchange] = useState(0);
   const [taskid,settaskid] = useState('');
-  const [Status,setStatus] = useState('Pending');
   const {id} = useParams();
   const colorarr=['fec89a','FFBF69','FFFFFF','CBF3F0','a1cca5','f5cac3'];
   useEffect(()=>{
@@ -29,10 +28,10 @@ export default function Tasks() {
   const gettask=async()=>{
     try {
     const { data } = await axios.get(
-      `http://localhost:8100/api/gettask/${id}`,
+      `https://taskmanagement-backend-nikhil.onrender.com/api/gettask/${id}`,
       );
-  
-      setarr(data.tasks);
+      const ar=data.tasks;
+      setarr(ar.reverse());
     }
       catch (error) {
         const x=error.response.data.message;
@@ -42,9 +41,8 @@ export default function Tasks() {
   const deletetask=async(e,taskid)=>{
     e.preventDefault();
     try {
-      console.log(Status);
       const { data } = await axios.delete(
-        `http://localhost:8100/api/delettask/${taskid}`,
+        `https://taskmanagement-backend-nikhil.onrender.com/api/delettask/${taskid}`,
       );
       setchange(!change);
     } catch (error) {
@@ -52,13 +50,18 @@ export default function Tasks() {
         alert(x);
     }
   }
-  const statuschange=async(e,taskid)=>{
-   
+  const statuschange=async(e,taskid,status)=>{
+    let Status;
+    if(status==='Pending'){
+      Status='Completed'
+    }
+    else{
+      Status='Pending';
+    }
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:8100/api/update/${taskid}`,
-  
+        `https://taskmanagement-backend-nikhil.onrender.com/api/update/${taskid}`,
         {Status:Status},
       );
       setchange(!change);
@@ -71,7 +74,7 @@ export default function Tasks() {
     console.log(taskid);
     try {
       await axios.put(
-        `http://localhost:8100/api/update/${taskid}`,
+        `https://taskmanagement-backend-nikhil.onrender.com/api/update/${taskid}`,
         { title,Discription,Status:'Pending'},
       );
       setchange(!change);
@@ -93,7 +96,7 @@ export default function Tasks() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `http://localhost:8100/api/addtask/${id}`,
+        `https://taskmanagement-backend-nikhil.onrender.com/api/addtask/${id}`,
         { title,Discription,Status:'Pending'},
           {
             headers: {
@@ -132,7 +135,7 @@ export default function Tasks() {
               <p className="title">{task.title}</p>
               <p className="discription">{task.Discription}</p>
              <div className="icon"> 
-             <div  className ='status' onClick={(e) => statuschange(e, task._id)}>{task.Status}</div>
+             <div  className ='status' onClick={(e) => statuschange(e, task._id,task.Status)}>{task.Status}</div>
               <DeleteIcon className ='icon1' onClick={(e) => deletetask(e, task._id)} style={{color:'#22223b',fontSize:'1.0rem'}}/>
               < UpdateIcon className="icon1" onClick={(e) => updatetask(e, task)} style={{ color:'#22223b',fontSize:'1.0rem'}}/>
                </div>

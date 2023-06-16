@@ -85,10 +85,23 @@
 }
 @media screen and (max-width: 600px) {
     .home {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr ;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
     }
     .right {
-      padding: 0;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 90vh;
     }
+    .task{
+        width: 150PX;
+        margin: 1vmax;
+    }
+   
   }

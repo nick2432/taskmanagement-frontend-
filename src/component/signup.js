@@ -35,6 +35,7 @@ export default function Signup() {
         <Link to="/signup"  className="signuptab">Signup</Link>
       </div>
     <div className="login" >
+    <p className="taskmanager">Task manager</p>
       <form className="loginForm" onSubmit={collectdata}>
       <p className="heading">Signup</p>
       <input

@@ -35,11 +35,13 @@ export default function Login() {
   return (
 
     <div className="firstpage">
+       
       <div className="header">
         <Link to="/" className="logintab">Login</Link>
         <Link to="/signup"  className="signuptab">Signup</Link>
       </div>
        <div className='login'>
+       <p className="taskmanager">Task manager</p>
     <form className="loginForm"  onSubmit={collectdata}>
     <p className="heading">Login</p>
     <input

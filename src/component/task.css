@@ -1,0 +1,94 @@
+.home{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+    width: 100vw;
+   
+}
+.screen{
+    width: 100vw;
+    height: 100vh;
+}
+.left{
+   background-color: #212529; 
+   padding: 2vmax;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   z-index: 2;
+}
+.title{
+    font-family: 'Helvetica Neue';
+}
+.inputtask{
+    height: 200px;
+    background-color: #6C757D;
+}
+.input1{
+    background-color: #6C757D; 
+}
+.lable{
+    font-family: 'Helvetica Neue';
+    color: aliceblue;
+}
+.right{
+    background-color: #343A40;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vmax;
+}
+.task{
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position:relative;
+    width: 250px;
+    padding: 10px;
+    margin: 2vmax;
+    height: 200px;
+}
+.discription{
+    height: 100px;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+}
+.icon{
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    display: flex;
+    gap: 10px;
+    cursor:pointer;
+}
+.dateicon{
+    position: absolute;
+    
+    bottom: 5%;
+}
+.icon1:hover {
+    transform: scale(1.2);
+}
+.icon3:hover{
+    transform: scale(1.06);
+}
+.date{
+    margin-top: 5%;
+    font-size: 0.5rem;
+}
+.status{
+  background-color: rgb(226, 211, 36);
+  padding: 2px 10px 0px 10px;
+  font-size: 0.5rem;
+  border-radius: 20px;
+}
+.status:hover{
+    transform: scale(1.06);
+}
+@media screen and (max-width: 600px) {
+    .home {
+      grid-template-columns: 1fr 2fr;
+    }
+    .right {
+      padding: 0;
+      min-height: 90vh;
+    }
+  }

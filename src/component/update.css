@@ -1,0 +1,16 @@
+#update{
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position:absolute;
+    background-color: rgba(240, 248, 255, 0.5);
+}
+.updatebox{
+    background-color: #212529; 
+    padding: 2vmax;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

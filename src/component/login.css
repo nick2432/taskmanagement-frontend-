@@ -1,0 +1,70 @@
+.login {
+    height: 100vh;
+    background-color:#a6919c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vmax;
+    box-sizing: border-box;
+  }
+  .firstpage{
+    height: 100vh;
+     display: flex;
+     flex-direction: column;
+  }
+  .header{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    background-color: #162627;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    gap: 2%;
+  }
+  .logintab{
+    margin-top: 1%;
+    margin-left: 84%;
+    color: rgb(249, 254, 254);
+  }
+  .heading{
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .signuptab{
+    margin-top: 1%;
+    margin-left: 1%;
+    color: rgb(249, 254, 254);
+  }
+  .loginForm {
+    background-color: #fffffe;
+    width: 35%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 2vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .loginForm > input {
+    box-sizing: border-box;
+    height: 30px;
+    padding: 1vmax 2vmax;
+    width: 80%;
+    border: 1px solid #ccc;
+    margin: 2vmax;
+    font-size: 1rem;
+    outline: none;
+  }
+  .loginForm > a {
+    align-self: flex-end;
+    color: rgba(0, 0, 0, 0.342);
+    margin: 2vmax;
+  }
+  .button{
+    background-color: #b5d0e3;
+    width: 7vmax;
+    height: 2vmax;
+    border: none;
+    border-radius:20px ;
+    cursor: pointer;
+  }
